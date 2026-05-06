@@ -1,6 +1,6 @@
 # GhostMode
 
-Simple Dark mode for Google Sheets and Google Docs
+Simple Dark mode firefox extension for Google Sheets and Google Docs
 
 ## Features
 
