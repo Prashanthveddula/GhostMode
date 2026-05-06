@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    :root {
+      --bg: #121212;
+      --card: #1e1e1e;
+      --accent: #8ab4f8;
+      --text: #e0e0e0;
+      --text-dim: #9aa0a6;
+      --border: #3c4043;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 220px;
+      padding: 20px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .toggle {
+      position: relative;
+      width: 44px;
+      height: 24px;
+    }
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #3c4043;
+      border-radius: 24px;
+      transition: 0.2s;
+    }
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: 0.2s;
+    }
+    .toggle input:checked + .toggle-slider {
+      background: var(--accent);
+    }
+    .toggle input:checked + .toggle-slider:before {
+      transform: translateX(20px);
+    }
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    .contrast-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .contrast-btn {
+      padding: 10px 4px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 11px;
+      cursor: pointer;
+      background: var(--card);
+      color: var(--text-dim);
+      transition: 0.2s;
+      font-weight: 500;
+    }
+    .contrast-btn:hover {
+      border-color: #5f6368;
+      color: var(--text);
+    }
+    .contrast-btn.active {
+      background: rgba(138, 180, 248, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .footer {
+      margin-top: 24px;
+      font-size: 10px;
+      color: var(--text-dim);
+      text-align: center;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>GhostMode</h1>
+    <label class="toggle">
+      <input type="checkbox" id="main-toggle">
+      <span class="toggle-slider"></span>
+    </label>
+  </div>
+
+  <div class="section-label">Contrast Level</div>
+  <div class="contrast-grid">
+    <button class="contrast-btn" data-level="dark">Dark</button>
+    <button class="contrast-btn" data-level="darker">Darker</button>
+    <button class="contrast-btn" data-level="darkest">Darkest</button>
+  </div>
+
+  <div class="footer">Ctrl+Shift+D to toggle</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

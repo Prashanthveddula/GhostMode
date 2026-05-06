@@ -1,0 +1,33 @@
+/* Google Sheets Workspace Selective Dark Mode - Cleaned */
+
+/* Target the main grid and formula bar */
+#grid-table-container,
+.grid-container,
+.docs-sheet-container-contents,
+#t-formula-bar-input-container {
+  filter: var(--ghostmode-filter, invert(1) hue-rotate(180deg)) !important;
+  background-color: #fff !important;
+}
+
+/* Fix for the formula bar icons and text */
+#t-formula-bar-input {
+  background-color: white !important;
+}
+
+/* Un-invert images or charts */
+.docs-sheet-content img,
+.waffle-canvas-container canvas:not(.grid-canvas),
+.docs-icon-img {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Ensure tab containers stay natural */
+.docs-sheet-tab-container,
+.docs-sheet-tab-button {
+  filter: none !important;
+}
+
+/* Clean up grid lines if they are too harsh */
+.grid-canvas {
+  opacity: 0.9;
+}

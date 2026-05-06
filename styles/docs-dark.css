@@ -1,0 +1,28 @@
+/* Google Docs Workspace Selective Dark Mode - Cleaned */
+
+/* Target the main editor area and pages */
+.kix-appview-editor,
+.kix-page-compact-container,
+#docs-editor,
+#docs-editor-container {
+  filter: var(--ghostmode-filter, invert(1) hue-rotate(180deg)) !important;
+  background-color: #fff !important; /* Inverted becomes dark */
+}
+
+/* Un-invert images and specific UI elements */
+.kix-page img,
+.kix-page canvas:not(.kix-canvas-tile),
+.docs-icon-img,
+.kix-cursor-caret {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Clean up borders and extra spacing that might look odd when inverted */
+.kix-page-compact-container {
+  box-shadow: none !important;
+}
+
+/* Fix for comments and sidebars */
+.docos-docoview {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
