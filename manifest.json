@@ -53,5 +53,13 @@
       "resources": ["styles/*.css"],
       "matches": ["*://*.docs.google.com/*"]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ghostmode@pv17",
+      "data_collection_permissions": {
+      "required": ["none"]
+      }
+    }
+  }
 }
